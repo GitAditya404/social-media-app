@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <div class="w-full min-h-screen bg-zinc-900 text-white p-10">
+
+        <h5 class="text-3xl mb-5 font-semibold">Upload Image</h5>
+        <form action="/profile/upload" method="post" enctype="multipart/form-data"> <!--  form will be sent in chunks (multipart) , multer will only work if this property is given -->
+            <input class="border-2 bg-white text-black w-50 cursor-pointer" type="file" name="image"
+            >
+            <input type="submit"  value="Upload ProfilePic" class="mt-5 w-40 rounded-md text-sm px-3 py-2 block bg-yellow-500">
+        </form>
+
+    </div>
+</body>
+</html>
