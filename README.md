@@ -1,0 +1,1 @@
+This is a simple social media , which is implemented using ejs + node + mongodb along with authentication feature
