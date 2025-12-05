@@ -85,7 +85,11 @@ app.post('/profile/upload',isLoggedIn, upload.single('image'),async (req,res) =>
 
 function isLoggedIn(req,res,next){
     // console.log(req.cookies.token)
-    if(req.cookies.token ==='')  return res.send("you must login first")
+    // if(req.cookies.token ==='')  return res.send("you must login first")
+      if (!token) {
+    // no token -> redirect to login (web app flow)
+    return res.redirect('/login');
+  }
 
     let data = jwt.verify(req.cookies.token,"secretword") //verify karo token ko secretword ke basis par , aur agar sahi ho toh token me jo data banate time tha (email,userid) usko data variable me daal do
     req.user = data;  //req me ek user naam ka field bana ke usme data dal do
