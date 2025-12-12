@@ -86,7 +86,7 @@ app.post('/profile/upload',isLoggedIn, upload.single('image'),async (req,res) =>
 function isLoggedIn(req,res,next){
     // console.log(req.cookies.token)
     // if(req.cookies.token ==='')  return res.send("you must login first")
-      if (!token) {
+      if (!req.cookies.token) {
     // no token -> redirect to login (web app flow)
     return res.redirect('/login');
   }
